@@ -16,4 +16,6 @@
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require bootstrap/modal
+//= require twitter/bootstrap
+//= require jquery.easing
 //= require_tree .
