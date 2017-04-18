@@ -38,11 +38,13 @@ gem 'carrierwave'
 gem 'ransack'
 gem 'will_paginate-bootstrap'
 
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'sqlite3'
   gem 'awesome_rails_console'
+  # gem 'hirb-unicode'
 end
 
 group :development do
