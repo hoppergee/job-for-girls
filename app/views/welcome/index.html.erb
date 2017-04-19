@@ -1,5 +1,3 @@
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script> -->
 
 <div class="col-md-12">
   <div class="row box">
@@ -11,33 +9,33 @@
 		                <div>JOB</div>
 		                <div id='master-container-scroller'>
 		                  <div class='master-container-scroller_item'>
-		                    <a class='cta-link' href='#'>iOS</a>.
+		                    <a class='cta-link' href='#'>iOS</a>
 		                  </div>
 		                  <div class='master-container-scroller_item'>
-		                    <a class='cta-link' href='#'>Enemy</a>.
+		                    <a class='cta-link' href='#'>PHP</a>
 		                  </div>
 		                  <div class='master-container-scroller_item'>
-		                    <a class='cta-link' href='#'>RUBY</a>.
+		                    <a class='cta-link' href='#'>RUBY</a>
 		                  </div>
 		                  <div class='master-container-scroller_item'>
-		                    <a class='cta-link' href='#'>JS</a>.
+		                    <a class='cta-link' href='#'>JavaScript</a>
 		                  </div>
 		                  <div class='master-container-scroller_item'>
-		                    <a class='cta-link' href='#'>C++</a>.
+		                    <a class='cta-link' href='#'>C++</a>
 		                  </div>
 		                  <div class='master-container-scroller_item'>
-		                    <a class='cta-link' href='#'>Android</a>.
+		                    <a class='cta-link' href='#'>Android</a>
 		                  </div>
 		                  <div class='master-container-scroller_item'>
-		                    <a class='cta-link' href='#'>Swift</a>.
+		                    <a class='cta-link' href='#'>JAVA</a>
 		                  </div>
 		                  <div class='master-container-scroller_item'>
-		                    <a class='cta-link' href='#'>Earlang</a>.
+		                    <a class='cta-link' href='#'>Python</a>
 		                  </div>
 		                  <div class='master-container-scroller_item'>
-		                    <a class='cta-link' href='#'>Rails</a>.
+		                    <a class='cta-link' href='#'>C#</a>
 		                  </div>
-		                  <div class='master-container-scroller_item'>OC.</div>
+		                  <div class='master-container-scroller_item'>SQL</div>
 		                </div>
 		                <div>ONLY FOR GIRLS</div>
 		              </h1>
@@ -62,8 +60,8 @@
 						<h1 class="teal-text">Build your career profile</h1>
 						<h2 class="teal-content-text">Start your personal career journey. Identify your interests, build your career profile and explore occupations.</h2>
 						<div class="text-center">
-							<a class="btn btn-teal-lg login-home-modal" data-link="/my-career-profile" data-target="#LogInModal" data-toggle="modal" href="/my-career-profile">Start here</a>
-							<!-- <%= link_to("Start here", '#', class: "btn btn-default") %> -->
+							<!-- <a class="btn btn-teal-lg login-home-modal" data-link="/my-career-profile" data-target="#LogInModal" data-toggle="modal" href="/my-career-profile">Start here</a> -->
+							<%= link_to("Start here", jobs_path, class: "btn btn-teal-lg login-home-modal") %>
 						</div>
 						<div id="careerguideAnimation">
 							<%= image_tag 'careerPath-illustration.png' %>
@@ -110,7 +108,8 @@
 						<h1 class="teal-text">Explore industries</h1>
 						<h2 class="teal-content-text">Find out about the occupations and employment opportunities in Australia's key industries.</h2>
 						<div class="text-center">
-							<a class="btn btn-teal-lg login-home-modal" href="/industries">Browse all industries</a>
+							<!-- <a class="btn btn-teal-lg login-home-modal" href="/industries">Browse all industries</a> -->
+							<%= link_to("Browse all industries", jobs_path, class: "btn btn-teal-lg login-home-modal") %>
 						</div>
 						<div class="col-lg-12  clearfix text-center" id="industries-galery">
 							<div class=" col-xs-12 col-sm-4 col-lg-4 ">

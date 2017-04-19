@@ -12,14 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap
 //= require nav_common
 //= require_tree .
 
 
 
-	// $(document).ready(function () {
+	// $(document).on('page:load', function () {
 	//   $('#myCarousel').carousel({
 	//     interval: 2000 //它是用来控制轮播图播放时间的，可以根据需要调整这个值，此时为2000ms
 	//   })
@@ -31,6 +30,7 @@
 // require bootstrap/carousel
 // require bootstrap/dropdown
 // require bootstrap/modal
+// require turbolinks
 
 
 
