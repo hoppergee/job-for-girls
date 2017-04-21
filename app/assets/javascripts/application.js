@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require nav_common
+//= require jobs_common
 //= require_tree .
 
 
