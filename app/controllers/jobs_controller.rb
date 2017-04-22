@@ -3,14 +3,21 @@ class JobsController < ApplicationController
   before_action :validate_search_key, only: [:search]
   
   def index
-    @jobs = case params[:order]
-            when "by_lower_bound"
-              Job.published.order("wage_lower_bound DESC")
-            when "by_upper_bound"
-              Job.published.order("wage_upper_bound DESC")
-            else
-              Job.published.recent
-            end
+    
+    if @query_string.present?
+      search_result = Job.ransack(@search_criteria).result(:distinct => true)
+    else
+      search_result = Job.ransack("").result(:distinct => true)
+    end
+    @jobs = search_result.paginate(:page => params[:page], :per_page => 3 )
+    # @jobs = case params[:order]
+    #         when "by_lower_bound"
+    #           Job.published.order("wage_lower_bound DESC")
+    #         when "by_upper_bound"
+    #           Job.published.order("wage_upper_bound DESC")
+    #         else
+    #           Job.published.recent
+    #         end
   end
   
   def show
@@ -59,7 +66,7 @@ class JobsController < ApplicationController
   def search
     if @query_string.present?
       search_result = Job.ransack(@search_criteria).result(:distinct => true)
-      @jobs = search_result.paginate(:page => params[:page], :per_page => 15 )
+      @jobs = search_result.paginate(:page => params[:page], :per_page => 3 )
     end
   end
 

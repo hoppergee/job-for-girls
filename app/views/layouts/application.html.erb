@@ -9,6 +9,21 @@
 	
 
 	<link rel="shortcut icon" href="/images/favicon.ico">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	
+	<script>
+	$(document).ready(function(){
+		$("input").focus(function(){
+			$(this).css("background-color", "#cccccc");
+		    $("#DropDown_br").show();
+		});
+		$("input").blur(function(){
+			$(this).css("background-color", "#ffffff");
+		    $("#DropDown_br").hide();
+		});
+	});
+	</script>
+
   </head>
 
   <body>

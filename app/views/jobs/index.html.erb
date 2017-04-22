@@ -41,6 +41,7 @@
 
 <!-- <br><br><br><br><br><br> -->
 
+
 <header id="home">
 	
 	<section class="hero" id="hero">
@@ -58,6 +59,137 @@
 	</section>
 	
 </header>
+
+
+           <div class="show-for-medium medium-3 grid-content">
+               <select name="" id="">
+                  <option value="">Adelaide</option>
+                  <option value="">Brisbane</option>
+                  <option value="">Sydney</option>
+                  <option value="">Melbourne</option>
+                  <option value="">Perth</option>
+               </select>
+            </div>
+			
+            <div class="show-for-medium medium-3 grid-content">
+               <select name="" id="">
+                  <option value="">All Categories</option>
+                  <option value="">Food Offers</option>
+                  <option value="">Drink Specials</option>
+                  <option value="">Festivals</option>
+                  <option value="">Music</option>
+                  <option value="">Comedy</option>
+               </select>
+            </div>
+			
+            <div class="show-for-medium medium-3 grid-content">
+               <select name="" id="">
+                  <option value="">Today</option>
+                  <option value="">Tomorrow</option>
+                  <option value="">Sunday</option>
+                  <option value="">Monday</option>
+                  <option value="">Tuesday</option>
+                  <option value="">Wednesday</option>
+               </select>
+            </div>
+			
+
+<div class="SearchContainer">
+	<div class="SearchForm row center">
+		<form action="/s" method="get" class="center">
+			<!-- <div class="SearchForm__inputs-wrapper col-md-12">
+				<div class="SearchForm__row row"> -->
+				<div class="SearchForm__location">
+					<label for="#" class="SearchForm__label">
+						<span>领域</span>
+					</label><br>
+					<input type="text" name="fname">
+				</div>
+				<div class="SearchForm__dates" >
+					<label for="#" class="SearchForm__label">
+						<span>领域</span>
+					</label><br>
+					<input type="text" name="lname">
+				</div>
+				<div class="SearchForm__guests" >
+					<label for="#" class="SearchForm__label">
+						<span>领域</span>
+					</label><br>
+					<input type="text" name="nname">
+				</div>
+				<div class="SearchForm__submit">
+					<button type="submit" class="btn btn-primary " >
+						提交
+					</button>
+				</div>
+				
+				<%= render "location_dropdown" %>
+				<!-- </div>
+			</div> -->
+			
+			
+		</form>
+	</div>
+</div>
+
+
+
+
+<!-- <div id="main-wrapper" >
+   <div id="main-container" class="grid-block">
+
+
+      <div id="content-wrapper" class="grid-block vertical">
+         <div id="filter-wrapper" class="vertical medium-horizontal grid-block align-center">
+
+            <div class="show-for-medium medium-3 grid-content">
+               <select name="" id="">
+                  <option value="">Adelaide</option>
+                  <option value="">Brisbane</option>
+                  <option value="">Sydney</option>
+                  <option value="">Melbourne</option>
+                  <option value="">Perth</option>
+               </select>
+            </div>
+
+            <div class="show-for-medium medium-3 grid-content">
+               <select name="" id="">
+                  <option value="">All Categories</option>
+                  <option value="">Food Offers</option>
+                  <option value="">Drink Specials</option>
+                  <option value="">Festivals</option>
+                  <option value="">Music</option>
+                  <option value="">Comedy</option>
+               </select>
+            </div>
+
+            <div class="show-for-medium medium-3 grid-content">
+               <select name="" id="">
+                  <option value="">Today</option>
+                  <option value="">Tomorrow</option>
+                  <option value="">Sunday</option>
+                  <option value="">Monday</option>
+                  <option value="">Tuesday</option>
+                  <option value="">Wednesday</option>
+               </select>
+            </div>
+
+            <div class="show-for-medium medium-2 grid-content">
+               <a href="#" class="expand button">Filter</a>
+            </div>
+
+            <div class="hide-for-medium small-12 grid-content">
+               <a href="#" class="expand button">Filter Options</a>
+            </div>
+
+         </div>
+
+   </div>
+</div> -->
+
+
+
+
 
 <div class=" row graygradient-bg">
 <section class="portfolio col-md-offset-1 col-md-10 text-center container" id="portfolio" style="margin-top: 40px;">
@@ -79,8 +211,15 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div>			
 		<% end %>
+		
+		<br>
+	         <div class="text-center">
+	        <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+	        </div>
+		<br>
+		
 		<div class="app col-md-4 wp4 animated fadeInDown">
 			<div class="flashcard clearfix">
 				<div class="img"> 
