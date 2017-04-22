@@ -96,9 +96,35 @@
 
 <div class="SearchContainer">
 	<div class="SearchForm row center">
-		<form action="/s" method="get" class="center">
-			<!-- <div class="SearchForm__inputs-wrapper col-md-12">
-				<div class="SearchForm__row row"> -->
+		
+		<%= form_tag search_jobs_path, method: :get, class: "center" do %>
+			<div class="SearchForm__location">
+				<label for="#" class="SearchForm__label">
+					<span>领域</span>
+				</label><br>
+				<input type="text" name="city" value="<%= params[:city] %>" placeholder="工作地点 城市">
+			</div>
+			<div class="SearchForm__dates" >
+				<label for="#" class="SearchForm__label">
+					<span>领域</span>
+				</label><br>
+				<!-- <input type="text" name="lname"> -->
+				<input type="text" name="category" value="<%= params[:category] %>" placeholder="领域划分">
+			</div>
+			<div class="SearchForm__guests" >
+				<label for="#" class="SearchForm__label">
+					<span>领域</span>
+				</label><br>
+				<!-- <input type="text" name="nname"> -->
+				<input type="text" name="q" value="<%= params[:q] %>" placeholder="职位名称">
+			</div>
+			<div class="SearchForm__submit">
+				<button type="submit" class="btn btn-primary " >
+					Search
+				</button>
+			</div>
+		<% end %>
+		<!-- <form action="/s" method="get" class="center">
 				<div class="SearchForm__location">
 					<label for="#" class="SearchForm__label">
 						<span>领域</span>
@@ -122,13 +148,9 @@
 						提交
 					</button>
 				</div>
-				
+
 				<%= render "location_dropdown" %>
-				<!-- </div>
-			</div> -->
-			
-			
-		</form>
+		</form> -->
 	</div>
 </div>
 

@@ -1,13 +1,19 @@
-$(document).ready(function(){
+// $(document).ready(function(){
 	$("input").focus(function(){
 		$(this).css("background-color", "#cccccc");
 	    $("#DropDown_br").show();
 	});
-	$("input").blur(function(){
+	// $("input").blur(function(){
+	// 	$(this).css("background-color", "#ffffff");
+	//     $("#DropDown_br").hide();
+	// });
+	
+	$(".Destination").click(function(){
 		$(this).css("background-color", "#ffffff");
 	    $("#DropDown_br").hide();
 	});
-});
+// });
+
 
 
 
