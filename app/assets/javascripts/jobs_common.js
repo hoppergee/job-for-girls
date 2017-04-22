@@ -1,4 +1,4 @@
-// $(document).ready(function(){
+$(document).ready(function(){
 	$("input").focus(function(){
 		$(this).css("background-color", "#cccccc");
 	    $("#DropDown_br").show();
@@ -12,7 +12,7 @@
 		$(this).css("background-color", "#ffffff");
 	    $("#DropDown_br").hide();
 	});
-// });
+});
 
 
 
