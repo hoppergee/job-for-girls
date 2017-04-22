@@ -1,16 +1,14 @@
 CarrierWave.configure do |config|
   if Rails.env.production? or Rails.env.development?
-    config.storage :fog
+    
     config.fog_credentials = {
-      provider: 'AWS',
-      aws_access_key_id: ENV["AKIAIVOKTPCR57DPOUKA"],
-      aws_secret_access_key: ENV["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"],
-      region: 'ap-northeast-1'
-      
+      provider:              'AWS',
+      aws_access_key_id:     ENV["AWS_ACCESS_KEY_ID"],
+      aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],
+      region:                ENV['ap-northeast-1']
     }
-    
-    config.fog_directory = ENV["wokenfullstack"]
-    
+    config.storage = :fog
+    config.fog_directory  =  ENV["AWS_BUCKET_NAME"]
   else
     config.storage :file
   end

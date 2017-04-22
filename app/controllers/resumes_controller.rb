@@ -15,7 +15,7 @@ class ResumesController < ApplicationController
     if @resume.save
       redirect_to job_path(@job)
     else
-      redner :new
+      render :new
     end
   end
   
