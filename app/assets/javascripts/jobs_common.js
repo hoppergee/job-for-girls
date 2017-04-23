@@ -1,5 +1,6 @@
 $(document).ready(function(){
-	$('input[id^="SearchInput__"]').focus(function(){
+	$('input[id|="SearchInput__city"]').focus(function(){
+	// $('input[id^="SearchInput__city"]').focus(function()){
 		// $(this).css("background-color", "#cccccc");
 	    $(".SearchDropDownWrapper").show();
 	});
@@ -7,6 +8,8 @@ $(document).ready(function(){
 	// 	$(this).css("background-color", "#ffffff");
 	//     $("#DropDown_br").hide();
 	// });
+	
+
 	
 	$(".Destination").click(function(){
 		// $(this).css("background-color", "#ffffff");
@@ -26,6 +29,18 @@ $(document).ready(function(){
 		//         	$(".SearchDropDownWrapper").hide();
 		//         }
 		//     });
+		
+
+		$("input.down").click(function(e){
+		e.stopPropagation();
+		$("div.con").removeClass("hide");
+		});
+		$(document).click(function(){
+		if(!$("div.con").hasClass("hide")){
+		$("div.con").addClass("hide");
+		}
+		});
+
 });
 
 
