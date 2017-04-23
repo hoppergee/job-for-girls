@@ -64,26 +64,27 @@
 			
 
 
-
 <div class=" row graygradient-bg">
 <section class="portfolio col-md-offset-1 col-md-10 text-center container" id="portfolio" style="margin-top: 40px;">
 	<h3 class="nice-title">最美产品</h3>
 	<div class="no-margin" id="niceapps">
 		<% @jobs.each do |job| %>
-			<div class="app col-md-4 wp4 animated fadeInDown">
+			<div class="app col-md-4 animated fadeInDown" >
 				<div class="flashcard clearfix">
-					<div class="img"> 
+					<!-- <div class="img">  -->
 					<!-- <div class="flashcard"></div> -->
 						<!-- <img alt="最美应用" src="../../static/landingpage/img/pic_zuiweb_normal@2x.jpg"> -->
 						<!-- <%= image_tag("jobs/section/pic_zuiweb_normal@2x.jpg") %> -->
-						<%= image_tag("jj.jpg", alt: job.title) %>
+						<!-- <%= image_tag("jj.jpg", alt: job.title) %> -->
+						<%= render :partial => "card",  locals: {job: @job}%>
 						<div class="overlay">
 							<a class="expand" href="http://zuimeia.com" target="_blank"> 
 								<!-- <img alt="最美应用官网" src="../../static/landingpage/img/pic_zuiweb_hover@2x.jpg"> -->
-								<%= image_tag("jobs/section/pic_zuiweb_hover@2x.jpg") %>
+								<!-- <%= image_tag("jobs/section/pic_zuiweb_hover@2x.jpg") %> -->
+								<iframe width="auto" height="auto" src="//www.youtube.com/embed/oZT6tFZN-FU" frameborder="0" allowfullscreen></iframe>
 							</a> 
 						</div>
-					</div>
+					<!-- </div> -->
 				</div>
 			</div>			
 		<% end %>
