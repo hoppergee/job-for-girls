@@ -1,11 +1,15 @@
 <h1> Add a job </h1>
 
-<%= simple_form_for @job do |f| %>
+<%= simple_form_for [:admin, @job] do |f| %>
 
 <%= f.input :title %>
 <%= f.input :description %>
 <%= f.input :wage_lower_bound, :label => "薪资下限" %>
 <%= f.input :wage_upper_bound, :label => "薪资上限" %>
+<%= f.input :work_ex_lower_bound, :label => "工作经验下限" %>
+<%= f.input :work_ex_upper_bound, :label => "工作经验上限" %>
+<%= f.input :work_city, :label => "工作城市" %>
+<%= f.input :work_city_region, :label => "行政区域" %>
 <%= f.input :contact_email %>
 <%= f.input :is_hidden %>
 

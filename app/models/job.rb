@@ -1,5 +1,5 @@
 class Job < ApplicationRecord
-  
+  belongs_to :user
   has_many :resumes
   
   validates :title, presence: true
