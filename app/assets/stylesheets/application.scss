@@ -933,13 +933,12 @@ footer .footer-below {
 .video {
 //  	background-image: url('http://img.youtube.com/vi/nZcejtAwxz4/maxresdefault.jpg');
 background-color: white;
-  	height: 429px;
-	width: 360px;
+  	height: 385px;
+	width: 361px;
 	margin: 0;
-	align-content:center;
 //  	border: 1px solid blue;
 //  object-fit: cover;
-//  overflow: hidden;
+  overflow: hidden;
 	display: flex;
   	flex-direction: column;
   	justify-content: center;
@@ -948,7 +947,7 @@ background-color: white;
 
 .thevideo {
     width: 360px;
-	margin: 0 auto;
+	margin: 0;
 //	height: 429px;
 //	background-color: yellow;
 //object-fit: cover;
