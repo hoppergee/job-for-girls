@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170424141900) do
+ActiveRecord::Schema.define(version: 20170424142354) do
 
   create_table "jobs", force: :cascade do |t|
     t.string   "title"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20170424141900) do
     t.string   "company_image"
     t.string   "brief_video"
     t.string   "brief_video_l"
+    t.boolean  "is_company",             default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -9,4 +9,8 @@ class User < ApplicationRecord
   def admin?
     is_admin
   end
+  
+  def company?
+    is_company
+  end
 end
