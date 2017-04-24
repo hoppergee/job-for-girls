@@ -5,7 +5,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:is_admin,:name])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :head_icon])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :business_scope, :financing_process, :head_icon, :company_image, :brief_video])
   end
   
   # def configure_permitted_parameters
