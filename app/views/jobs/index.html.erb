@@ -68,6 +68,7 @@
 <section class="portfolio col-md-offset-1 col-md-10 text-center container" id="portfolio" style="margin-top: 40px;">
 	<h3 class="nice-title">最美产品</h3>
 	<div class="no-margin" id="niceapps">
+				
 		<% @jobs.each do |job| %>
 			<div class="app col-md-4 animated fadeInDown" >
 				<div class="flashcard clearfix">
@@ -76,12 +77,21 @@
 						<!-- <img alt="最美应用" src="../../static/landingpage/img/pic_zuiweb_normal@2x.jpg"> -->
 						<!-- <%= image_tag("jobs/section/pic_zuiweb_normal@2x.jpg") %> -->
 						<!-- <%= image_tag("jj.jpg", alt: job.title) %> -->
-						<%= render :partial => "card",  locals: {job: @job}%>
+						
+						<%= render partial: "card", locals: { card: job } %>
+						
 						<div class="overlay">
-							<a class="expand" href="http://zuimeia.com" target="_blank"> 
+							<a class="expand" href="http://zuimeia.com" target="_blank" style="padding: 0;"> 
 								<!-- <img alt="最美应用官网" src="../../static/landingpage/img/pic_zuiweb_hover@2x.jpg"> -->
 								<!-- <%= image_tag("jobs/section/pic_zuiweb_hover@2x.jpg") %> -->
-								<iframe width="auto" height="auto" src="//www.youtube.com/embed/oZT6tFZN-FU" frameborder="0" allowfullscreen></iframe>
+								<!-- <iframe class="video" id="ciiice card-video-<%= job.id %>" width="auto" height="auto" src="//www.youtube.com/embed/oZT6tFZN-FU" frameborder="0" allowfullscreen></iframe> -->
+								<div class="video">
+								    <video class="thevideo" loop preload="none" >
+										<source src="http://7xss15.com1.z0.glb.clouddn.com/Ada%20Developers%20Academy%20-%20Summer%202016.mp4" type="video/mp4">
+								      <!-- <source src="http://giant.gfycat.com/VerifiableTerrificHind.webm" type="video/webm"> -->
+								    Your browser does not support the video tag.
+								    </video>
+								</div>
 							</a> 
 						</div>
 					<!-- </div> -->
@@ -95,91 +105,7 @@
 	        </div>
 		<br>
 		
-		<div class="app col-md-4 wp4 animated fadeInDown">
-			<div class="flashcard clearfix">
-				<div class="img"> 
-				<!-- <div class="flashcard"></div> -->
-					<!-- <img alt="最美应用" src="../../static/landingpage/img/pic_zuiweb_normal@2x.jpg"> -->
-					<%= image_tag("jobs/section/pic_zuiweb_normal@2x.jpg") %>
-					<div class="overlay">
-						<a class="expand" href="http://zuimeia.com" target="_blank"> 
-							<!-- <img alt="最美应用官网" src="../../static/landingpage/img/pic_zuiweb_hover@2x.jpg"> -->
-							<%= image_tag("jobs/section/pic_zuiweb_hover@2x.jpg") %>
-						</a> 
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="app col-md-4 wp4 delay-05s animated fadeInDown">
-			<div class="flashcard clearfix">
-				<div class="img"> 
-					<!-- <img alt="最美应用" src="../../static/landingpage/img/pic_zui_normal@2x.jpg"> -->
-					<%= image_tag("jobs/section/pic_zui_normal@2x.jpg") %>
-					<div class="overlay">
-						<a class="expand" href="http://hi.zuimeia.com/nice" target="_blank"> 
-							<!-- <img alt="最美应用" src="../../static/landingpage/img/pic_zui_hover@2x.jpg"> -->
-							<%= image_tag("jobs/section/pic_zui_hover@2x.jpg") %>
-						</a> 
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="app col-md-4 wp4 delay-1s animated fadeInDown">
-			<div class="flashcard clearfix">
-				<div class="img"> 
-					<!-- <img alt="最美壁纸" src="../../static/landingpage/img/pic_zuiwallpaper_normal@2x.jpg"> -->
-					<%= image_tag("jobs/section/pic_zuiwallpaper_normal@2x.jpg") %>
-					<div class="overlay">
-						<a class="expand" href="http://hi.zuimeia.com/pic" target="_blank"> 
-						<!-- <img alt="最美壁纸" src="../../static/landingpage/img/pic_zuiwallpaper_hover@2x.jpg"> -->
-						<%= image_tag("jobs/section/pic_zuiwallpaper_hover@2x.jpg") %>
-						</a> 
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="app col-md-4 wp4 delay-15s animated fadeInDown">
-			<div class="flashcard clearfix">
-				<div class="img"> 
-					<!-- <img alt="最美锁屏" src="../../static/landingpage/img/pic_zuilocker_normal@2x.jpg"> -->
-					<%= image_tag("jobs/section/pic_zuilocker_normal@2x.jpg") %>
-					<div class="overlay">
-						<a class="expand" href="http://hi.zuimeia.com/locker" target="_blank"> 
-							<!-- <img alt="最美锁屏" src="../../static/landingpage/img/pic_zuilocker_hover@2x.jpg"> -->
-							<%= image_tag("jobs/section/pic_zuilocker_hover@2x.jpg") %>
-						</a> 
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="app col-md-4 wp4 delay-2s animated fadeInDown">
-			<div class="flashcard clearfix">
-				<div class="img"> 
-					<!-- <img alt="最美时光" src="../../static/landingpage/img/pic_zuidays_normal@2x.jpg"> -->
-					<%= image_tag("jobs/section/pic_zuidays_normal@2x.jpg") %>
-					<div class="overlay">
-						<a class="expand" href="http://hi.zuimeia.com/days" target="_blank"> 
-							<!-- <img alt="最美时光" src="../../static/landingpage/img/pic_zuidays_hover@2x.jpg"> -->
-							<%= image_tag("jobs/section/pic_zuidays_hover@2x.jpg") %>
-						</a> 
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="app col-md-4 wp4 delay-25s animated fadeInDown">
-			<div class="flashcard clearfix">
-				<div class="img"> 
-					<!-- <img alt="空气锁屏" src="../../static/landingpage/img/pic_airlock_normal@2x.jpg"> -->
-					<%= image_tag("jobs/section/pic_airlock_normal@2x.jpg") %>
-					<div class="overlay">
-						<a class="expand" href="http://hi.zuimeia.com/air" target="_blank"> 
-						<!-- <img alt="空气锁屏" src="../../static/landingpage/img/pic_airlock_hover@2x.jpg"> -->
-						<%= image_tag("jobs/section/pic_airlock_hover@2x.jpg") %>
-						</a> 
-					</div>
-				</div>
-			</div>
-		</div>
+		
 	</div>
 </section>
 </div>

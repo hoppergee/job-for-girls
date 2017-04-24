@@ -926,3 +926,45 @@ footer .footer-below {
     padding: 25px 0;
     background-color: #233140;
 }
+
+
+
+// ========= video ===========
+.video {
+//  	background-image: url('http://img.youtube.com/vi/nZcejtAwxz4/maxresdefault.jpg');
+background-color: white;
+  	height: 429px;
+	width: 360px;
+	margin: 0;
+	align-content:center;
+//  	border: 1px solid blue;
+//  object-fit: cover;
+//  overflow: hidden;
+	display: flex;
+  	flex-direction: column;
+  	justify-content: center;
+
+}
+
+.thevideo {
+    width: 360px;
+	margin: 0 auto;
+//	height: 429px;
+//	background-color: yellow;
+//object-fit: cover;
+//border: 1px solid orange;
+
+//position: relative;
+//  top: 50%;
+//  transform: translateY(-50%);
+
+}
+
+/* Hide Play button + controls on iOS */
+video::-webkit-media-controls {
+    display:none !important;
+}
+
+source {
+	width: 360px;
+}
