@@ -10,18 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170418083055) do
+ActiveRecord::Schema.define(version: 20170424125748) do
 
   create_table "jobs", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.integer  "wage_upper_bound"
     t.integer  "wage_lower_bound"
     t.string   "contact_email"
-    t.boolean  "is_hidden",        default: true
+    t.boolean  "is_hidden",           default: true
     t.string   "category"
+    t.integer  "work_ex_lower_bound"
+    t.integer  "work_ex_upper_bound"
+    t.string   "work_city"
+    t.string   "work_city_region"
   end
 
   create_table "resumes", force: :cascade do |t|
@@ -47,6 +51,13 @@ ActiveRecord::Schema.define(version: 20170418083055) do
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.boolean  "is_admin",               default: false
+    t.string   "name"
+    t.text     "business_scope"
+    t.string   "financing_process"
+    t.string   "head_icon"
+    t.string   "company_image"
+    t.string   "brief_video"
+    t.string   "brief_video_l"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
