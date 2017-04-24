@@ -16,8 +16,7 @@
   box-shadow: 0 0 50px rgba(0,0,0,.3);
   margin: auto;
   overflow: hidden;
-  min-width: 329px;
-  max-width: 360px;
+  width: 360px;
 /*  padding: 0;*/
 /*  max-width: 360px;*/
 /*  border: 1px solid green;*/
@@ -93,13 +92,20 @@
   background-color: rgba(255, 255, 255, .35);
   border-radius: 20px;
   font-size: 11px;
-  margin-right: 8px;
+  margin-right: 9px;
   padding: 4px 10px;
   text-transform: uppercase;
 }
 
 .stats {
-  margin-top: 35px;
+/*  margin-top: 35px;*/
+/*	margin: 0;*/
+/*	padding: 0;*/
+}
+
+.stats>span {
+	display: block;
+/*	border: 1px solid red;*/
 }
 
 .stat-module {
@@ -107,6 +113,12 @@
   font-size: 12px;
   margin-right: 20px;
   text-transform: uppercase;
+/*  border: 1px solid blue;*/
+}
+
+.stat-module>h3 {
+	margin: 10px;
+	padding: 0;
 }
 
 .stat-number {
@@ -155,13 +167,13 @@
 
 .body-stats {
   display: inline-block;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 700;
   float: left;
   margin: -14px 0  0 30px;
   position: relative;
-  text-transform: uppercase;
-  width: 20%;
+/*  text-transform: uppercase;*/
+  width: 56%;
 }
 
 .body-stats > span {
