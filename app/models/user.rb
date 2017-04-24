@@ -6,6 +6,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          
+         mount_uploader :head_icon, HeadIconUploader
+         
   def admin?
     is_admin
   end

@@ -12,8 +12,27 @@ create_account = User.create([email: 'admin@gmail.com', password: '123456', pass
 puts 'Admin account 创建成功'
 
 company_user_name = [
-  '美宅', '语响教育', '端点科技', '三体', '嘟嘟养成记', 'Finger', '氦氪', '机动派', '美团点评', '今日头条', '网易', '滴滴出行', '爱奇艺',
-  '优酷', '百度', '阿里巴巴', '360', '58到家', '饿了么', '小米', '汽车之家'
+  {name:'美宅', email:"mei@qq.com"}, 
+  '语响教育', 
+  '端点科技', 
+  '三体', 
+  '嘟嘟养成记', 
+  'Finger', 
+  '氦氪', 
+  '机动派', 
+  '美团点评', 
+  '今日头条', 
+  '网易', 
+  '滴滴出行', 
+  '爱奇艺',
+  '优酷', 
+  '百度', 
+  '阿里巴巴', 
+  '360', 
+  '58到家', 
+  '饿了么', 
+  '小米', 
+  '汽车之家'
 ]
 
 company_business_scope = [
@@ -23,3 +42,4 @@ company_business_scope = [
 company_financing_process = [
   '未融资', '天使轮', 'A轮', 'B轮', 'C轮', 'D轮', '上市公司', '不需要融资'
 ]
+
