@@ -81,10 +81,9 @@
 						<%= render partial: "card", locals: { card: job } %>
 						
 						<div class="overlay">
-							<a class="expand" href="http://zuimeia.com" target="_blank" style="padding: 0;"> 
-								<!-- <img alt="最美应用官网" src="../../static/landingpage/img/pic_zuiweb_hover@2x.jpg"> -->
-								<!-- <%= image_tag("jobs/section/pic_zuiweb_hover@2x.jpg") %> -->
-								<!-- <iframe class="video" id="ciiice card-video-<%= job.id %>" width="auto" height="auto" src="//www.youtube.com/embed/oZT6tFZN-FU" frameborder="0" allowfullscreen></iframe> -->
+							<!-- <a class="expand" href="http://zuimeia.com" target="_blank" style="padding: 0;"> -->
+							<a class="expand" href="/jobs/<%= job.id %>" target="_blank" style="padding: 0;">
+							<!-- <%= link_to("", job_path(job), class: "expand", target: "_blank", style: "padding: 0;") %> -->
 								<div class="video">
 								    <video class="thevideo" loop preload="none" >
 										<source src="http://7xss15.com1.z0.glb.clouddn.com/Ada%20Developers%20Academy%20-%20Summer%202016.mp4" type="video/mp4">

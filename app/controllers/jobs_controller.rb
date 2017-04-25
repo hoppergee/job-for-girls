@@ -9,7 +9,7 @@ class JobsController < ApplicationController
     else
       search_result = Job.ransack("").result(:distinct => true)
     end
-    @jobs = search_result.paginate(:page => params[:page], :per_page => 3 )
+    @jobs = search_result.paginate(:page => params[:page], :per_page => 9 )
     # @jobs = case params[:order]
     #         when "by_lower_bound"
     #           Job.published.order("wage_lower_bound DESC")
@@ -66,7 +66,7 @@ class JobsController < ApplicationController
   def search
     if @query_string.present?
       search_result = Job.ransack(@search_criteria).result(:distinct => true)
-      @jobs = search_result.paginate(:page => params[:page], :per_page => 3 )
+      @jobs = search_result.paginate(:page => params[:page], :per_page => 9 )
     end
   end
 
@@ -76,15 +76,16 @@ class JobsController < ApplicationController
   def validate_search_key
     
     @query_string = params[:q].gsub(/\\|\'|\/|\?|？|。|，|‘/, "") if params[:q].present?
-    # binding.pry
-    @cc = params[:city].gsub(/\\|\'|\/|\?|？|。|，|‘/, "").to_i if params[:city].present?
-    @search_criteria = search_criteria(@query_stirng, @cc)
+    @work_city = params[:work_city].gsub(/\\|\'|\/|\?|？|。|，|‘/, "") if params[:work_city].present?
+    @category = params[:category].gsub(/\\|\'|\/|\?|？|。|，|‘/, "") if params[:category].present?
+    @search_criteria = search_criteria()
   end
 
 
-  def search_criteria( query_string,cc)
-    { :title_cont => query_string , :wage_lower_bound_gt => cc}
-    # { :wage_lower_bound_gt => cc}
+  def search_criteria()
+    # { :title_cont => query_string , :work_city_cont => work_city}
+    # { :wage_lower_bound_gt => work_city}
+    { :title_cont => @query_string , :work_city_cont => @work_city, :category_in => @category}
   end
   
   private

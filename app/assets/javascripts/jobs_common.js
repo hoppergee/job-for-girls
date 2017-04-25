@@ -54,6 +54,10 @@ $(document).ready(function(){
 	    $('video', this).get(0).pause(); 
 		// $('.card-container').hide();
 	}
+	
+	$(".video").click( function(){
+		$('video', this).get(0).pause(); 
+	});
 		
 
 });

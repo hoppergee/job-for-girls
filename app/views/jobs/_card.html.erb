@@ -2,16 +2,16 @@
   <div class="header-container">
     <img src="https://s17.postimg.org/ypm5ye95r/image.jpg" alt="" class="header-image" />
     <div class="header">
-      <h1 class="main-heading">iOS 工程师</h1>
-      <span class="tag">ios</span>
-      <span class="tag">php</span>
+      <h1 class="main-heading"><%= card.title %></h1>
+      <span class="tag"><%= card.category[0] %></span>
+      <span class="tag"><%= card.category[1] %></span>
       <div class="stats">
         <span class="stat-module">
            <!-- <span class="stat-number"> <h3>3k ~ 6k<h3> </span> -->
-			   <h3>3k ~ 6k</h3>
+			   <h3><%= card.wage_lower_bound / 1000 %>k ~ <%= card.wage_upper_bound / 1000 %>k</h3>
         </span>
         <span class="stat-module">
-          <h5>1~3年工作经验</h5>
+          <h5><%= card.work_ex_lower_bound %>~<%= card.work_ex_upper_bound %>年工作经验</h5>
         </span>
         <span class="stat-module">
           社保，公积金，年终奖，五险一金 社保，公积金，年终奖，五险一金 社保，公积金，年终奖，五险一金 <span class="stat-number"></span>
@@ -33,13 +33,13 @@
         <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
         <path d="M0 0h24v24H0z" fill="none"/>
       </svg> -->
-		  北京
+		  <%= card.work_city %>
     </div>
     <!-- <span class="body-stats">成都市<span>武侯区</span></span> -->
-    <span class="body-stats">成都鼎盛中原电子技术服务<span></span></span>
+    <span class="body-stats"><%= card.user.name %><span></span></span>
     <div class="body-info">
       <p>
-        移动互联网,数据服务 / 未融资
+        <%= card.user.business_scope %> / <%= card.user.financing_process %>
       </p>
     </div>
   </div>
