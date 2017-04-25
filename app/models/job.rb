@@ -2,7 +2,7 @@ class Job < ApplicationRecord
   belongs_to :user
   has_many :resumes
   
-  serialize :category,Array
+  # serialize :category,Array
   
   validates :title, presence: true
   validates :wage_lower_bound, presence: true

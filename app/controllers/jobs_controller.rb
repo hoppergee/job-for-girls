@@ -64,7 +64,7 @@ class JobsController < ApplicationController
   end
   
   def search
-    if @query_string.present?
+    if @query_string.present? || @working_city.present? || @working_category.present?
       search_result = Job.ransack(@search_criteria).result(:distinct => true)
       @jobs = search_result.paginate(:page => params[:page], :per_page => 9 )
     end
@@ -75,17 +75,19 @@ class JobsController < ApplicationController
 
   def validate_search_key
     
+    @working_city = params[:city].gsub(/\\|\'|\/|\?|？|。|，|‘/, "") if params[:city].present?
+    @working_category = params[:category].gsub(/\\|\'|\/|\?|？|。|，|‘/, "") if params[:category].present?
     @query_string = params[:q].gsub(/\\|\'|\/|\?|？|。|，|‘/, "") if params[:q].present?
-    @work_city = params[:work_city].gsub(/\\|\'|\/|\?|？|。|，|‘/, "") if params[:work_city].present?
-    @category = params[:category].gsub(/\\|\'|\/|\?|？|。|，|‘/, "") if params[:category].present?
+    
     @search_criteria = search_criteria()
   end
 
 
   def search_criteria()
-    # { :title_cont => query_string , :work_city_cont => work_city}
-    # { :wage_lower_bound_gt => work_city}
-    { :title_cont => @query_string , :work_city_cont => @work_city, :category_in => @category}
+    # { :title_cont => @query_string ,
+    #   :work_city_cont => @working_city,
+    #   :category1_or_category2_cont => @working_category}
+    {:work_city_eq => @working_city}
   end
   
   private

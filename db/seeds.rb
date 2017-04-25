@@ -84,13 +84,17 @@ job_category = [
 ]
 
 20.times do |index|
+  
+  categorys = job_category.sample(2)
+  
   Job.create!([
     title:  job_info.sample,
     description:  job_description,
     wage_lower_bound: rand(20..39) * 100,
     wage_upper_bound: rand(40..79) * 100,
     is_hidden:  'false',
-    category:  job_category.sample(2),
+    category1:  categorys.pop,
+    category2:  categorys.pop,
     work_ex_lower_bound:  rand(0..2),
     work_ex_upper_bound:  rand(3..5),
     work_city:  job_city.sample,
