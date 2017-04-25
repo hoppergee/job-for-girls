@@ -15,11 +15,14 @@
     <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
     <%= f.input :password_confirmation, required: false %>
     <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
-	<%= f.input :business_scope %>
-	<%= f.input :financing_process %>
-	<%= f.input :head_icon %>
-	<%= f.input :company_image %>
-	<%= f.input :brief_video %>
+	
+	<% if current_user.company?  %>
+	<%= f.input :business_scope, label: "经营范围" %>
+	<%= f.input :financing_process, label: "融资情况"%>
+	<%= f.input :head_icon, label: "公司头像" %>
+	<%= f.input :company_image, label: "公司背景图"%>
+	<%= f.input :brief_video, label: "宣传短视频" %>
+	<% end %>
 	
 
   </div>

@@ -47,10 +47,12 @@ $(document).ready(function(){
 
 	function hoverVideo(e) {  
 	    $('video', this).get(0).play(); 
+		// $('.card-container').add
 	}
 
 	function hideVideo(e) {
 	    $('video', this).get(0).pause(); 
+		// $('.card-container').hide();
 	}
 		
 
