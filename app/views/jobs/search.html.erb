@@ -1,8 +1,8 @@
 
-  <div class="col-md-12" style="margin: 150px;">
-	  
+  <!-- <div class="col-md-12" style="margin: 150px;">
+
 	  <%= render "jobs/search_bar" %>
-	  
+
     <% if @jobs.blank?%>
       <br>
       <h3 class="text-center">
@@ -41,4 +41,89 @@
       </div>
 
     <% end %>
+  </div> -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+  <header id="home">
+	
+  	<section class="hero" id="hero">
+  		<div class="container">
+  			<div class="row logo-row">
+  				<div class="col-md-8 col-md-offset-2 text-center inner logo animated fadeInUp delay-05s">
+  					<!-- <a href="."> -->
+  						<!-- <img alt="最美团队" src="../../static/landingpage/img/family_title@2x.png"> -->
+  						<!-- <%= image_tag("jobs/family_title@2x.png") %> -->
+  						<!-- <%= render "common/search_bar" %> -->
+  						<%= render "search_container" %>
+						
+  					<!-- </a>  -->
+  				</div>
+  			</div>
+  		</div>
+  	</section>
+	
+  </header>
+			
+
+
+  <div class=" row graygradient-bg">
+  <section class="portfolio col-md-offset-1 col-md-10 text-center container" id="portfolio" style="margin-top: 40px;">
+  	<!-- <h3 class="nice-title">最美产品</h3> -->
+  	<div class="no-margin" id="niceapps">
+				
+			    <% if @jobs.blank?%>
+			      <br>
+			      <h3 class="text-center">
+			        Opps! No jobs matched yet, please try again.
+			      </h3>
+			    <% else %>
+				
+  		<% @jobs.each do |job| %>
+  			<div class="app col-md-4 col-lg-4 animated fadeInDown" >
+  				<div class="flashcard clearfix">
+  					<!-- <div class="img">  -->
+  					<!-- <div class="flashcard"></div> -->
+  						<!-- <img alt="最美应用" src="../../static/landingpage/img/pic_zuiweb_normal@2x.jpg"> -->
+  						<!-- <%= image_tag("jobs/section/pic_zuiweb_normal@2x.jpg") %> -->
+  						<!-- <%= image_tag("jj.jpg", alt: job.title) %> -->
+						
+  						<%= render partial: "card", locals: { card: job } %>
+						
+  						<div class="overlay">
+  							<!-- <a class="expand" href="http://zuimeia.com" target="_blank" style="padding: 0;"> -->
+  							<a class="expand" href="/jobs/<%= job.id %>" target="_blank" style="padding: 0;">
+  							<!-- <%= link_to("", job_path(job), class: "expand", target: "_blank", style: "padding: 0;") %> -->
+  								<div class="video">
+  								    <video class="thevideo" loop preload="none" >
+  										<source src="http://7xss15.com1.z0.glb.clouddn.com/Ada%20Developers%20Academy%20-%20Summer%202016.mp4" type="video/mp4">
+  								      <!-- <source src="http://giant.gfycat.com/VerifiableTerrificHind.webm" type="video/webm"> -->
+  								    Your browser does not support the video tag.
+  								    </video>
+  								</div>
+  							</a> 
+  						</div>
+  					<!-- </div> -->
+  				</div>
+  			</div>			
+  		<% end %>
+		
+  		<br>
+  	         <div class="text-center">
+  	        <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+  	        </div>
+  		<br>
+		
+		<% end %>
+  	</div>
+  </section>
   </div>

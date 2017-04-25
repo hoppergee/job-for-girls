@@ -4,12 +4,30 @@ class JobsController < ApplicationController
   
   def index
     
-    if @query_string.present?
+      # if params.has_key?(:jobs)
+      #   params.require(:jobs)
+      #   @jobs = Job.where(params[:jobs])
+      #   binding.pry
+      # else
+      #   @jobs = Job.all.paginate(:page => params[:page], :per_page => 9 )
+      # end
+      
+      # if params[:jobs] != nil
+      #   binding.pry
+      #   @jobs = params[:jobs].paginate(:page => params[:page], :per_page => 9 )
+      # else
+      #   search_result = Job.ransack("").result(:distinct => true)
+      # end
+      # @jobs = search_result.paginate(:page => params[:page], :per_page => 9 )
+    
+    if @query_string.present? || @working_city.present? || @working_category.present?
+      binding.pry
       search_result = Job.ransack(@search_criteria).result(:distinct => true)
     else
       search_result = Job.ransack("").result(:distinct => true)
     end
     @jobs = search_result.paginate(:page => params[:page], :per_page => 9 )
+    
     # @jobs = case params[:order]
     #         when "by_lower_bound"
     #           Job.published.order("wage_lower_bound DESC")
@@ -84,10 +102,9 @@ class JobsController < ApplicationController
 
 
   def search_criteria()
-    # { :title_cont => @query_string ,
-    #   :work_city_cont => @working_city,
-    #   :category1_or_category2_cont => @working_category}
-    {:work_city_eq => @working_city}
+    { :title_cont => @query_string ,
+      :work_city_cont => @working_city,
+      :category1_or_category2_cont => @working_category}
   end
   
   private
