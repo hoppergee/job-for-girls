@@ -21,12 +21,12 @@ ActiveRecord::Schema.define(version: 20170425024455) do
     t.integer  "wage_lower_bound"
     t.string   "contact_email"
     t.boolean  "is_hidden",           default: true
-    t.text     "category",            default: "--- []\n"
     t.integer  "work_ex_lower_bound"
     t.integer  "work_ex_upper_bound"
     t.string   "work_city"
     t.string   "work_city_region"
     t.integer  "user_id"
+    t.text     "category",            default: "--- []\n"
   end
 
   create_table "resumes", force: :cascade do |t|

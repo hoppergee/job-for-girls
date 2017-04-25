@@ -37,11 +37,11 @@ company_financing_process = [
   '未融资', '天使轮', 'A轮', 'B轮', 'C轮', 'D轮', '上市公司', '不需要融资'
 ]
 
-
-company_user_info.each do |name, email|
+puts 'cool'
+company_user_info.each do |company|
   User.create!([
-    name: name, 
-    email: email, 
+    name: company[:name], 
+    email: company[:email], 
     password: '123456', 
     password_confirmation: '123456', 
     is_admin: 'true', 
@@ -53,7 +53,7 @@ end
 
 job_info = [
   "iOS工程师","后端开发工程师","C#开发","后端开发实习", "后端高级主管", "Golang后端开发",
-  "游戏后端","移动开发工程师", "Software Engineers(iOS)", "高级移动开发工程师","测试工程师"，
+  "游戏后端","移动开发工程师", "Software Engineers(iOS)", "高级移动开发工程师","测试工程师",
   "前端开发工程师","网络安全工程师","技术总监","构架师"
 ]
 
@@ -71,7 +71,7 @@ job_description = '
 '
 
 job_city = [
-  "北京"，"香港","上海","广州","浙江","成都","首尔", "东京", "大阪","台中", "台北","高雄",
+  "北京","香港","上海","广州","浙江","成都","首尔", "东京", "大阪","台中", "台北","高雄",
   "巴黎", "伦敦", "巴塞罗那", "罗马", "佛罗伦萨", "米兰", "威尼斯", "阿姆斯特丹", "尼斯", "慕尼黑", "柏林","马德里",
   "洛杉矶", "纽约", "旧金山", "波士顿", "华盛顿特区", "硅谷", "西雅图", "温哥华", "迈阿密", "圣地亚哥", "拉斯维加斯", "芝加哥",
   "悉尼", "墨尔本", "皇后镇", "黄金海岸", "布里斯班", "奥克兰"
